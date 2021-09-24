@@ -52,7 +52,7 @@ The tests will need to be updated to create the Strategy and pass it through to 
     
 <commit>Compile and run tests. Commit if they pass.</commit>
 
-## <heading>Step 4: Create specific strategies</heading>
+## <heading>Step 5: Create specific strategies</heading>
 
 Create subclasses of Strategy - one for each value of Type.
 
@@ -64,11 +64,11 @@ In the tests, create instances of the Derived classes instead of the Base class.
 
 <commit>Compile and run tests. Commit if they pass.</commit>
 
-## <heading>Step 5: Remove all references to the Type</heading>
+## <heading>Step 6: Remove all references to the Type</heading>
 
 The Strategy base class should now be abstract. It no longer needs to have a Type set or stored. Maybe turn it into an interface?
 
-## <heading>Step 6: Apply the same solution to Shape</heading>
+## <heading>Step 7: Apply the same solution to Shape</heading>
 
 Shape uses the same Type enum. Update it to use a Strategy instead.
 
