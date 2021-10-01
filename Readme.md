@@ -13,7 +13,7 @@ heading{
 
 This kata is designed to help you learn how to refactor to the Strategy pattern (https://refactoring.guru/design-patterns/strategy)
 
-There are two classes called Widget and Shape, which have complicated behaviour that is different depending on what their Type is. And their type can change at run-time. 
+There is a class called and Widget, which has complicated behaviour that is different depending on what its Type is. And its type can change at run-time. 
 Your goal is to create classes for each strategy, and to move the logic into these classes.
 
 There are existing tests which should be comprehensive enough to give you a safety harness as you refactor, but you might need to update them as you go.
@@ -67,9 +67,5 @@ In the tests, create instances of the Derived classes instead of the Base class.
 ## <heading>Step 6: Remove all references to the Type</heading>
 
 The Strategy base class should now be abstract. It no longer needs to have a Type set or stored. Maybe turn it into an interface?
-
-## <heading>Step 7: Apply the same solution to Shape</heading>
-
-Shape uses the same Type enum. Update it to use a Strategy instead.
 
 The Type enum class can now be removed.
