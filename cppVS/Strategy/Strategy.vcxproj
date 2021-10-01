@@ -139,8 +139,6 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Point.cpp" />
-    <ClCompile Include="Shape.cpp" />
-    <ClCompile Include="ShapeTest.cpp" />
     <ClCompile Include="TestMain.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
@@ -153,7 +151,6 @@
     <ClInclude Include="MockCanvas.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Point.h" />
-    <ClInclude Include="Shape.h" />
     <ClInclude Include="Type.h" />
     <ClInclude Include="Widget.h" />
   </ItemGroup>
