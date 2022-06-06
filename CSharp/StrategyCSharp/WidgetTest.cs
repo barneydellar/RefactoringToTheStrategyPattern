@@ -1,4 +1,3 @@
-using System.Drawing;
 using Moq;
 using NUnit.Framework;
 
@@ -9,147 +8,132 @@ namespace StrategyCSharp
         [Test]
         public void AWidgetCanBeCreated()
         {
-            Widget w = new Widget();
+            // ReSharper disable once UnusedVariable
+            var w = new Widget();
         }
 
         [Test]
         public void AWidgetCanDescribeItself()
         {
-            Widget w = new Widget();
+            var w = new Widget();
             w.Describe();
         }
 
         [Test]
         public void AWidgetStartsAsATriangle()
         {
-            Widget w = new Widget();
-            Assert.True(w.Describe() == "Triangle");
+            var w = new Widget();
+            Assert.AreEqual("Triangle", w.Describe());
         }
 
         [Test]
         public void AWidgetSTypeCanBeChangedAtRunTime()
         {
-            Widget w = new Widget();
-            Assert.True(w.Describe() == "Triangle");
+            var w = new Widget();
+            Assert.AreEqual("Triangle", w.Describe());
             w.SetType(Type.Square);
 
-            Assert.True(w.Describe() == "Square");
+            Assert.AreEqual("Square", w.Describe());
         }
 
         [Test]
         public void AWidgetCanSetToBeATriangle()
         {
-            Widget w = new Widget();
+            var w = new Widget();
             w.SetType(Type.Triangle);
         }
 
         [Test]
         public void ATriangularWidgetDescribesItselfAsATriangle()
         {
-            Widget w = new Widget();
+            var w = new Widget();
             w.SetType(Type.Triangle);
 
-            Assert.True(w.Describe() == "Triangle");
+            Assert.AreEqual("Triangle", w.Describe());
         }
 
         [Test]
         public void ATriangularWidgetDrawsAsATriangle()
         {
-            Widget w = new Widget();
-            w.SetType(Type.Triangle);
-
-            var c = new Mock<ICanvas>();
-
-            w.Draw(c.Object);
-
-            c.Verify(mock => mock.DrawVertex(It.IsAny<Point>()), Times.Exactly(3));
+            VerifyCorrectNumberOfVertices(Type.Triangle, 3);
         }
 
         [Test]
         public void AWidgetCanSetToBeASquare()
         {
-            Widget w = new Widget();
+            var w = new Widget();
             w.SetType(Type.Square);
         }
 
         [Test]
         public void ASquareWidgetDescribesItselfAsASquare()
         {
-            Widget w = new Widget();
+            var w = new Widget();
             w.SetType(Type.Square);
 
-            Assert.True(w.Describe() == "Square");
+            Assert.AreEqual("Square", w.Describe());
         }
 
         [Test]
         public void ASquareWidgetDrawsAsASquare()
         {
-            Widget w = new Widget();
-            w.SetType(Type.Square);
-
-            var c = new Mock<ICanvas>();
-
-            w.Draw(c.Object);
-
-            c.Verify(mock => mock.DrawVertex(It.IsAny<Point>()), Times.Exactly(4));
+            VerifyCorrectNumberOfVertices(Type.Square, 4);
         }
 
         [Test]
         public void AWidgetCanSetToBeAPentagon()
         {
-            Widget w = new Widget();
+            var w = new Widget();
             w.SetType(Type.Pentagon);
         }
 
         [Test]
         public void APentagonWidgetDescribesItselfAsAPentagon()
         {
-            Widget w = new Widget();
+            var w = new Widget();
             w.SetType(Type.Pentagon);
 
-            Assert.True(w.Describe() == "Pentagon");
+            Assert.AreEqual("Pentagon", w.Describe());
         }
 
         [Test]
         public void APentagonWidgetDrawsAsAPentagon()
         {
-            Widget w = new Widget();
-            w.SetType(Type.Pentagon);
-
-            var c = new Mock<ICanvas>();
-
-            w.Draw(c.Object);
-
-            c.Verify(mock => mock.DrawVertex(It.IsAny<Point>()), Times.Exactly(5));
+            VerifyCorrectNumberOfVertices(Type.Pentagon, 5);
         }
 
         [Test]
         public void AWidgetCanSetToBeAHexagon()
         {
-            Widget w = new Widget();
+            var w = new Widget();
             w.SetType(Type.Hexagon);
         }
 
         [Test]
         public void AHexagonWidgetDescribesItselfAsAHexagon()
         {
-            Widget w = new Widget();
+            var w = new Widget();
             w.SetType(Type.Hexagon);
 
-            Assert.True(w.Describe() == "Hexagon");
+            Assert.AreEqual("Hexagon", w.Describe());
         }
 
         [Test]
         public void AHexagonWidgetDrawsAsAHexagon()
         {
-            Widget w = new Widget();
-            w.SetType(Type.Hexagon);
+            VerifyCorrectNumberOfVertices(Type.Hexagon, 6);
+        }
+
+        private static void VerifyCorrectNumberOfVertices(Type type, int vertices)
+        {
+            var w = new Widget();
+            w.SetType(type);
 
             var c = new Mock<ICanvas>();
 
             w.Draw(c.Object);
 
-            c.Verify(mock => mock.DrawVertex(It.IsAny<Point>()), Times.Exactly(6));
+            c.Verify(mock => mock.DrawVertex(It.IsAny<Point>()), Times.Exactly(vertices));
         }
     }
 }

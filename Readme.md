@@ -1,15 +1,6 @@
-<style>
-commit{
-    color:orange;
-}
-heading{
-    color:firebrick;
-    font-weight: bold;
-}
-</style>
-# <heading>Instructions</heading>
+# Instructions
 
-## <heading>Introduction</heading>
+## Introduction
 
 This kata is designed to help you learn how to refactor to the Strategy pattern (https://refactoring.guru/design-patterns/strategy)
 
@@ -20,7 +11,7 @@ There are existing tests which should be comprehensive enough to give you a safe
 
 You should be able to refactor in small incremental steps, and make sure that the tests are passing after each step.
 
-## <heading>Step 1: Move the Describe logic into a Strategy</heading>
+## Step 1: Move the Describe logic into a Strategy
 
 We want a new class called Strategy, which will handle the Describe logic. We will call it from the Widget's Describe method.
 
@@ -28,21 +19,21 @@ Create a new class called Strategy. Give it a Describe method. Move all the logi
 
 Create an instance of Strategy in Widget's Describe method, and forward the call on to the Strategy. 
 
-<commit>Compile and run tests. Commit if they pass.</commit>
+**Compile and run tests. Commit if they pass.**
 
-## <heading>Step 2: Move the Draw logic into a Strategy</heading>
+## Step 2: Move the Draw logic into a Strategy
 
 Repeat Step 1 to move the Widget's Draw logic into Strategy.
 
-<commit>Compile and run tests. Commit if they pass.</commit>
+**Compile and run tests. Commit if they pass.**
 
-## <heading>Step 3: Update the Strategy's constructor to take in the Type.</heading>
+## Step 3: Update the Strategy's constructor to take in the Type.
 
 Change the constructor of Strategy so that it takes in the Type. Remove it as a parameter from Draw and Describe on Strategy.
 
-<commit>Compile and run tests. Commit if they pass.</commit>
+**Compile and run tests. Commit if they pass.**
 
-## <heading>Step 4: Update Widget to take in a Strategy</heading>
+## Step 4: Update Widget to take in a Strategy
 
 Update Widget so that it takes in a reference to Strategy and stores it, instead of taking in a Type. 
 
@@ -50,22 +41,28 @@ It should forward on the calls to Draw and Describe to this Strategy.
 
 The tests will need to be updated to create the Strategy and pass it through to the Widget.
     
-<commit>Compile and run tests. Commit if they pass.</commit>
+**Compile and run tests. Commit if they pass.**
 
-## <heading>Step 5: Create specific strategies</heading>
+## Step 5: Create specific strategies
 
-Create subclasses of Strategy - one for each value of Type.
+Create subclasses of Strategy - one for each value of Type. 
 
-<commit>Compile and run tests. Commit if they pass.</commit>
+Pass the relevant Type to the base class from the derived class's constructor. 
+
+Make the base class constructor protected. You will need to update the places where Strategies are created. 
+
+**Compile and run tests. Commit if they pass.**
 
 Move the logic from Draw and Describe down into the derived classes. 
 
-In the tests, create instances of the Derived classes instead of the Base class.
+You can use Code Coverage to help with this: Copy the entire method down, and then run code coverage for the derived class and for the base class.
 
-<commit>Compile and run tests. Commit if they pass.</commit>
+**Compile and run tests. Commit if they pass.**
 
-## <heading>Step 6: Remove all references to the Type</heading>
+## Step 6: Remove all references to the Type
 
 The Strategy base class should now be abstract. It no longer needs to have a Type set or stored. Maybe turn it into an interface?
 
 The Type enum class can now be removed.
+
+**Compile and run tests. Commit if they pass.**
