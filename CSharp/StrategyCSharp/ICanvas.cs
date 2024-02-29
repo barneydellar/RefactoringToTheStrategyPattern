@@ -1,9 +1,6 @@
-using System.Drawing;
+namespace StrategyCSharp;
 
-namespace StrategyCSharp
+public interface ICanvas
 {
-    public interface ICanvas
-    {
-        void DrawVertex(Point p);
-    }
+    void DrawVertex(Point p);
 }

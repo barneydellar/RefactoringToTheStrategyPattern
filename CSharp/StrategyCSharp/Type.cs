@@ -1,10 +1,9 @@
-namespace StrategyCSharp
+namespace StrategyCSharp;
+
+public enum Type
 {
-    public enum Type
-    {
-        Square,
-        Triangle,
-        Pentagon,
-        Hexagon
-    }
+    Square,
+    Triangle,
+    Pentagon,
+    Hexagon
 }

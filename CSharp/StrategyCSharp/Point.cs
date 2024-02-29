@@ -1,14 +1,7 @@
-namespace StrategyCSharp
-{
-    public struct Point
-    {
-        int x;
-        int y;
+namespace StrategyCSharp;
 
-        public Point(int i, int j) : this()
-        {
-            x = i;
-            y = j;
-        }
-    }
+public struct Point(int i, int j)
+{
+    int x = i;
+    int y = j;
 }
