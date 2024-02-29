@@ -1,10 +1,10 @@
-namespace StrategyCSharp;
+package org.example;
 
 public class Widget
 {
     private Type type = Type.Triangle;
 
-    public string Describe()
+    public String Describe()
     {
         if (type == Type.Triangle)
         {
@@ -32,7 +32,7 @@ public class Widget
 
     public void Draw(ICanvas canvas)
     {
-        canvas.DrawVertex(new Point(0, 0));
+        canvas.DrawVertex(new Point(0, 1));
         canvas.DrawVertex(new Point(2, 0));
         if (type == Type.Triangle)
         {
@@ -45,10 +45,10 @@ public class Widget
         }
         switch (type)
         {
-            case Type.Pentagon:
+            case Pentagon:
                 canvas.DrawVertex(new Point(1, 3));
                 break;
-            case Type.Hexagon:
+            case Hexagon:
                 canvas.DrawVertex(new Point(3, 1));
                 canvas.DrawVertex(new Point(-1, 1));
                 break;
