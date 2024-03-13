@@ -55,7 +55,7 @@ Make the base class constructor protected. You will need to update the places wh
 
 Move the logic from Draw and Describe down into the derived classes. 
 
-You can use Code Coverage to help with this: Copy the entire method down, and then run code coverage for the derived class and for the base class.
+See how much of the tidy-up you can do with just the IDE. 
 
 **Compile and run tests. Commit if they pass.**
 
