@@ -4,7 +4,7 @@
 
 This kata is designed to help you learn how to refactor to the Strategy pattern (https://refactoring.guru/design-patterns/strategy)
 
-There is a class called and Widget, which has complicated behaviour that is different depending on what its Type is. And its type can change at run-time. 
+There is a class called Widget, which has complicated behaviour that is different depending on what its Type is. And its type can change at run-time. 
 Your goal is to create classes for each strategy, and to move the logic into these classes.
 
 There are existing tests which should be comprehensive enough to give you a safety harness as you refactor, but you might need to update them as you go.
