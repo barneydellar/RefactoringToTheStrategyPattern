@@ -4,7 +4,7 @@ public class Widget
 {
     private Type type = Type.Triangle;
 
-    public String Describe()
+    public String describe()
     {
         if (type == Type.Triangle)
         {
@@ -25,32 +25,32 @@ public class Widget
         return "";
     }
 
-    public void SetType(Type type)
+    public void setType(Type type)
     {
         this.type = type;
     }
 
-    public void Draw(ICanvas canvas)
+    public void draw(ICanvas canvas)
     {
-        canvas.DrawVertex(new Point(0, 1));
-        canvas.DrawVertex(new Point(2, 0));
+        canvas.drawVertex(new Point(0, 1));
+        canvas.drawVertex(new Point(2, 0));
         if (type == Type.Triangle)
         {
-            canvas.DrawVertex(new Point(1, 2));
+            canvas.drawVertex(new Point(1, 2));
         }
         else
         {
-            canvas.DrawVertex(new Point(0, 2));
-            canvas.DrawVertex(new Point(2, 2));
+            canvas.drawVertex(new Point(0, 2));
+            canvas.drawVertex(new Point(2, 2));
         }
         switch (type)
         {
             case Pentagon:
-                canvas.DrawVertex(new Point(1, 3));
+                canvas.drawVertex(new Point(1, 3));
                 break;
             case Hexagon:
-                canvas.DrawVertex(new Point(3, 1));
-                canvas.DrawVertex(new Point(-1, 1));
+                canvas.drawVertex(new Point(3, 1));
+                canvas.drawVertex(new Point(-1, 1));
                 break;
         }
     }

@@ -7,119 +7,119 @@ import static org.mockito.Mockito.*;
 public class WidgetTest
 {
     @Test
-    public void AWidgetCanBeCreated()
+    public void aWidgetCanBeCreated()
     {
         var w = new Widget();
     }
 
     @Test
-    public void AWidgetCanDescribeItself()
+    public void aWidgetCanDescribeItself()
     {
         var w = new Widget();
-        w.Describe();
+        w.describe();
     }
 
     @Test
-    public void AWidgetStartsAsATriangle()
+    public void aWidgetStartsAsATriangle()
     {
         var w = new Widget();
-        assertEquals("Triangle", w.Describe());
+        assertEquals("Triangle", w.describe());
     }
 
     @Test
-    public void AWidgetSTypeCanBeChangedAtRunTime()
+    public void aWidgetSTypeCanBeChangedAtRunTime()
     {
         var w = new Widget();
-        assertEquals("Triangle", w.Describe());
-        w.SetType(Type.Square);
+        assertEquals("Triangle", w.describe());
+        w.setType(Type.Square);
 
-        assertEquals("Square", w.Describe());
+        assertEquals("Square", w.describe());
     }
 
     @Test
-    public void AWidgetCanSetToBeATriangle()
+    public void aWidgetCanSetToBeATriangle()
     {
         var w = new Widget();
-        w.SetType(Type.Triangle);
+        w.setType(Type.Triangle);
     }
 
     @Test
-    public void ATriangularWidgetDescribesItselfAsATriangle()
+    public void aTriangularWidgetDescribesItselfAsATriangle()
     {
         var w = new Widget();
-        w.SetType(Type.Triangle);
+        w.setType(Type.Triangle);
 
-        assertEquals("Triangle", w.Describe());
+        assertEquals("Triangle", w.describe());
     }
 
     @Test
-    public void ATriangularWidgetDrawsAsATriangle()
+    public void aTriangularWidgetDrawsAsATriangle()
     {
         VerifyCorrectNumberOfVertices(Type.Triangle, 3);
     }
 
     @Test
-    public void AWidgetCanSetToBeASquare()
+    public void aWidgetCanSetToBeASquare()
     {
         var w = new Widget();
-        w.SetType(Type.Square);
+        w.setType(Type.Square);
     }
 
     @Test
-    public void ASquareWidgetDescribesItselfAsASquare()
+    public void aSquareWidgetDescribesItselfAsASquare()
     {
         var w = new Widget();
-        w.SetType(Type.Square);
+        w.setType(Type.Square);
 
-        assertEquals("Square", w.Describe());
+        assertEquals("Square", w.describe());
     }
 
     @Test
-    public void ASquareWidgetDrawsAsASquare()
+    public void aSquareWidgetDrawsAsASquare()
     {
         VerifyCorrectNumberOfVertices(Type.Square, 4);
     }
 
     @Test
-    public void AWidgetCanSetToBeAPentagon()
+    public void aWidgetCanSetToBeAPentagon()
     {
         var w = new Widget();
-        w.SetType(Type.Pentagon);
+        w.setType(Type.Pentagon);
     }
 
     @Test
-    public void APentagonWidgetDescribesItselfAsAPentagon()
+    public void aPentagonWidgetDescribesItselfAsAPentagon()
     {
         var w = new Widget();
-        w.SetType(Type.Pentagon);
+        w.setType(Type.Pentagon);
 
-        assertEquals("Pentagon", w.Describe());
+        assertEquals("Pentagon", w.describe());
     }
 
     @Test
-    public void APentagonWidgetDrawsAsAPentagon()
+    public void aPentagonWidgetDrawsAsAPentagon()
     {
         VerifyCorrectNumberOfVertices(Type.Pentagon, 5);
     }
 
     @Test
-    public void AWidgetCanSetToBeAHexagon()
+    public void aWidgetCanSetToBeAHexagon()
     {
         var w = new Widget();
-        w.SetType(Type.Hexagon);
+        w.setType(Type.Hexagon);
     }
 
     @Test
-    public void AHexagonWidgetDescribesItselfAsAHexagon()
+    public void aHexagonWidgetDescribesItselfAsAHexagon()
     {
         var w = new Widget();
-        w.SetType(Type.Hexagon);
+        w.setType(Type.Hexagon);
 
-        assertEquals("Hexagon", w.Describe());
+        assertEquals("Hexagon", w.describe());
     }
 
     @Test
-    public void AHexagonWidgetDrawsAsAHexagon()
+    public void aHexagonWidgetDrawsAsAHexagon()
     {
         VerifyCorrectNumberOfVertices(Type.Hexagon, 6);
     }
@@ -127,12 +127,12 @@ public class WidgetTest
     private static void VerifyCorrectNumberOfVertices(Type type, int vertices)
     {
         var w = new Widget();
-        w.SetType(type);
+        w.setType(type);
 
         var c = mock(ICanvas.class);
 
-        w.Draw(c);
+        w.draw(c);
 
-        verify(c, times(vertices)).DrawVertex(any(Point.class));
+        verify(c, times(vertices)).drawVertex(any(Point.class));
     }
 }
